@@ -4,7 +4,8 @@ import datetime
 import os
 import time
 
-db = Database(db_url="https://kv.replit.com/v0/eyJhbGciOiJIUzUxMiIsImlzcyI6ImNvbm1hbiIsImtpZCI6InByb2Q6MSIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjb25tYW4iLCJleHAiOjE2NzU0MDY1NDEsImlhdCI6MTY3NTI5NDk0MSwiZGF0YWJhc2VfaWQiOiJmMjE3N2IyMy1kYmQyLTRmZWMtODEwZC1mZDY3MjdhNmM2ZDQiLCJ1c2VyIjoibWFyY29kZUFyZyIsInNsdWciOiJEYXk2MTEwMERheXMifQ.qvMF5bAvZhyZWY_gjboz2qwfWOT63DbhfgG5tJsOihvTGJGz0xCXy3C-iAK3wIPXRju3klt-5Y0pOxLP8GmUhw")  # Here you need your db url (on replit's shell: echo $REPLIT_DB_URL)
+# Here you need your db url (on replit's shell: echo $REPLIT_DB_URL)
+db = Database(db_url="")
 
 
 def addTweet():
