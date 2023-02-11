@@ -1,0 +1,22 @@
+* {
+    font-family: sans-serif;
+    background-color: #04151F;
+    color: white;
+    margin-bottom: 50px;
+    margin-left: 10px;
+  }
+  
+  h1 {
+    font-size: 50px;
+  }
+  
+  h2 {
+    font-size: 35px;
+    text-decoration: underline;
+    text-decoration-color: #FFCBDD;
+  }
+  
+  p {
+    background-color: #08283a;
+    padding: 7px;
+  }
