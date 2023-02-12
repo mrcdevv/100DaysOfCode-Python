@@ -1,0 +1,18 @@
+* {
+    font-family: sans-serif;
+    background-color: #04151F;
+    color: white;
+    margin: 0 10px 50px;
+  }
+
+html{
+  margin-top: 20px;
+}
+  
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 35px;
+}

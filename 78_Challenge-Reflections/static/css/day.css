@@ -1,0 +1,41 @@
+* {
+    font-family: sans-serif;
+    background-color: #04151F;
+    color: white;
+    margin: 0 10px 50px;
+  }
+
+html{
+  margin-top: 20px;
+}
+  
+h1 {
+  font-size: 50px;
+}
+  
+h2 {
+  font-size: 35px;
+}
+
+div {
+  display: flex;
+  justify-content: space-between;
+}
+  
+.reflection {
+  background-color: #08283a;
+  padding: 7px;
+}
+
+a {
+  text-decoration: none;
+  margin: 0;
+}
+
+.fa-chevron-left {
+  margin-left: 0;
+}
+
+.fa-chevron-right {
+  margin-right: 0;
+}
