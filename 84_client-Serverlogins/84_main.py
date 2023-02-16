@@ -1,5 +1,17 @@
 from flask import Flask, request, redirect
-from replit import db
+import mrcdb
+import random
+import os
+
+
+absFilePath = os.path.abspath(__file__)
+path, filename = os.path.split(absFilePath)
+db = mrcdb.cvsTo2DDict(f"{path}/clients.csv", "user")
+
+if "clients.csv" in os.listdir():
+    print("Encontrado")
+else:
+    print("Ni idea")
 
 app = Flask(__name__)
 
@@ -31,8 +43,15 @@ def signUp():
     form = request.form
 
     if form["user"] not in db.keys():
-        db[form["username"]] = {
-            "name": form["name"], "password": form["password"]}
+
+        salt = random.randint(1000, 10000000000)
+        newPass = f"{form['password']}{salt}"
+        newPass = hash(newPass)
+
+        db[form["user"]] = {
+            "name": form["name"], "password": newPass, "salt": salt}
+        # Update the csv file with the new user
+        mrcdb.dict2DToCsv(db, "clients.csv", "user")
         return redirect("/login")
     else:
         return redirect("/signup")
@@ -53,15 +72,17 @@ def loginPage():
 def login():
     form = request.form
 
-    try:
-        if form["user"] in db.keys():
-            if form["password"] == db[form["user"]["password"]]:
-                return f"Welcome {db[form['user']]['name']}"
-            else:
-                return redirect("/login")
+    if form["user"] in db.keys():
+
+        salt = db[form["user"]]["salt"]
+        formPassword = f"{form['password']}{salt}"
+        formPassword = hash(formPassword)
+
+        if formPassword == db[form["user"]]["password"]:
+            return f"Welcome {db[form['user']]['name']}"
         else:
-            return redirect("/signup")
-    except:
+            return redirect("/login")
+    else:
         return redirect("/signup")
 
 
