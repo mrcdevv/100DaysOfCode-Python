@@ -76,6 +76,7 @@ def email():
 page_scraping()
 schedule.every(24).hours.do(page_scraping)
 
+
 while True:
     schedule.run_pending()
     time.sleep(1)
