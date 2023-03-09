@@ -6,7 +6,7 @@ This is my 100DaysOfCode challenge from Replit.
 
 - All days, except for the challenges days, follow the next structure:
 
-"Fix my code" section where the instructor give some broken code
+"Fix my code" section where the instructor give some broken code  
 "Challenge" section where the instructor gives you a task to use everything taught on the day
 
 - Challenge days were for testing the knowledge acquired in previous days
